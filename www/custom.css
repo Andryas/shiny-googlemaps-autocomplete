@@ -1,0 +1,21 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.container-fluid {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaflet-container {
+    border-radius: 15px;
+    margin: 27px;
+}
+
+#test-button-layout {
+    width: 500px;
+}
