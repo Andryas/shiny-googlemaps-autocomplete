@@ -31,16 +31,21 @@ server <- function(input, output, session) {
 
     shinyjs::runjs('$("#map").width(500).height(500);')
 
+    results <- address()[["results"]]
+
+    lng <- results[["geometry"]][["location"]][["lng"]]
+    lat <- results[["geometry"]][["location"]][["lat"]]
+
     leaflet::leaflet() |>
       leaflet::addTiles() |>
       leaflet::setView(
-        lng = address()[["results"]][["geometry"]][["location"]][["lng"]],
-        lat = address()[["results"]][["geometry"]][["location"]][["lat"]],
+        lng = lng,
+        lat = lat,
         zoom = 13
       ) |>
       leaflet::addMarkers(
-        lng = address()[["results"]][["geometry"]][["location"]][["lng"]],
-        lat = address()[["results"]][["geometry"]][["location"]][["lat"]],
+        lng = lng,
+        lat = lat,
         popup = "Well done, noble warrior!"
       )
   })

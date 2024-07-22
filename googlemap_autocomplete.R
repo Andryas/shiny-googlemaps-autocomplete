@@ -47,7 +47,7 @@ googlemap_autocomplete_ui <- function(
     </script>
     <script src='https://maps.googleapis.com/maps/api/js?key=${key}&libraries=places&callback=initAutocomplete' async defer></script>"
   )
-  sccript <- stringr::str_interp(script)
+  script <- stringr::str_interp(script)
   script <- stringr::str_replace_all(script, "\\s+", "")
 
   shiny::tagList(
